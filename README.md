@@ -1,3 +1,7 @@
+Simple AWS infrastructure deployment with Terraform by ODONGA1
+You can download and reuse the code as you please, 
+Pull requests also allowed. 
+Contact me if any support needed, thank you
 # This Terraform configuration creates a VPC, internet gateway, route table, subnet, security group, network interface, and an EC2 instance with Apache web server installed.
 #
 # The VPC has a CIDR block of 10.0.0.0/16 and is tagged as "production".
@@ -15,3 +19,5 @@
 # The user data script for the EC2 instance updates all installed packages, installs Apache (httpd) and mod_ssl, starts the Apache service, enables it to start on boot, and creates a simple index.html file.
 #
 # Finally, the configuration outputs the public IP address, private IP address, and instance ID of the created EC2 instance.
+
+
