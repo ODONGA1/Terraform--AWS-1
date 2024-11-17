@@ -2,6 +2,30 @@ Simple AWS infrastructure deployment with Terraform by ODONGA1
 You can download and reuse the code as you please, 
 Pull requests also allowed. 
 Contact me if any support needed, thank you
+
+
+                 +-----------------------+
+                 |   AWS VPC (10.0.0.0/16) |
+                 +-----------+-----------+
+                             |
+               +-------------+-------------+
+               |                           |
+     +---------------------+     +-------------------------+
+     | Internet Gateway (GW) |     |     Public Subnet (10.0.1.0/24) |
+     +---------------------+     +-------------------------+
+               |                           |
+               |                   +-------+---------+
+     +----------------+           |   Web Server    |
+     | Route Table    |           | (EC2 Instance)  |
+     | (0.0.0.0/0, ::/0) |<--------|   10.0.1.50     |
+     +----------------+           +-----------------+
+               |                         |
+    +------------------------+    +----------------------+
+    | Security Group (Port 22,|    | Elastic IP (Public)  |
+    | 80, 443)                |    |   Public IP          |
+    +------------------------+    +----------------------+
+
+
 # This Terraform configuration creates a VPC, internet gateway, route table, subnet, security group, network interface, and an EC2 instance with Apache web server installed.
 #
 # The VPC has a CIDR block of 10.0.0.0/16 and is tagged as "production".
